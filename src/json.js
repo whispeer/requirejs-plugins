@@ -32,7 +32,7 @@ define(['text'], function(text){
                 text.get(req.toUrl(name), function(data){
                     var parsed;
                     if (config.isBuild) {
-                        buildMap[name] = data;
+                        buildMap[name] = JSON.stringify(JSON.parse(data));
                         onLoad(data);
                     } else {
                         try {
